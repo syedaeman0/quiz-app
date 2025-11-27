@@ -1,3 +1,17 @@
+function login() {
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "welcom!",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+
+  var container = document.getElementsByClassName('login-container')[0];
+  var quizapp = document.getElementById('quizapp');
+  container.classList.add('hidden');
+  quizapp.classList.remove('hidden');
+}
 
 var questions = [
     {
@@ -32,7 +46,7 @@ var index = 0;
 var result = 0;
 
 function renderQues() {
-    var container = document.getElementById("container");
+    var containerpb = document.getElementById("containerpb");
     var options = document.getElementsByName("option");
     if (index > 0) {
         for (var i = 0; i < options.length; i++) {
@@ -48,13 +62,13 @@ function renderQues() {
     if (!questions[index]) {
         calculateResult();
         var resultContainer = document.getElementById("result-container");
+        var containerpb = document.getElementById("containerpb");
         resultContainer.style.display = "block";
-        container.style.display = "none";
+        containerpb.style.display = "none";
         console.log("Result: " + result);
         return;
     }
-
-    container.innerHTML = `
+    containerpb.innerHTML = `
     <h3 class="text-center text-body-secondary">JavaScript Quiz</h3>
 
     <p class="question">${index + 1}. ${questions[index].Question}</p>

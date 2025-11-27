@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <title>Quiz App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <title>Quiz App</title>
 </head>
+
 <body>
-  <div id="container" class="container mt-3">
+  <!-- FORM -->
+  <div class="login-container">
+    <form>
+      <fieldset class="fieldset">
+        <legend class="legend">LOG IN</legend>
+        <label class="tittle" for="email">Email:
+          <input class="field" type="email" name="email" id="email" placeholder="abc@gmail.com"
+            required=""></label><br><br>
+        <label class="tittle" for="Password">Password:
+          <input class="field" type="password" placeholder="password" required=""></label><br><br>
+        <button class="button" onclick="login()" type="button">log in</button>
+      </fieldset>
+    </form>
   </div>
 
-  <div class="mt-3 container card" id="result-container" style="display: none;">
-    <div id="result" class="card-header text-center">
-      <b>Result</b>
+  <!-- Quiz app -->
+  <div id="quizapp" class="hidden">
+    <div id="containerpb" class="mt-3">
     </div>
-    <ul class="list-group list-group-flush">
-      <li id="score" class="list-group-item"></li>
-    </ul>
+
+    <div class="mt-3" id="result-container" style="display: none;">
+      <div id="result" class="card-header text-center">
+        <b>Result</b>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li id="score" class="list-group-item"></li>
+      </ul>
+    </div>
   </div>
-    <script src="app.js"></script>
+
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>
